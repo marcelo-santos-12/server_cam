@@ -37,10 +37,11 @@ class PageCam(Screen):
     def image(self):
         self.img1 = Image(source='logoCL.jpg')
         layout = BoxLayout()
-        layout.add_widget(self.img1)  
+        layout.add_widget(self.img1)
+        #layout.size = ()
         self.capture = cv2.VideoCapture(0)  #criamos um objeto de capture de vídeo. Associamos à primeira camera
         ret, frame = self.capture.read() 
-        Clock.schedule_interval(self.atualizaImagem, 1.0/30.0) 
+        Clock.schedule_interval(self.atualizaImagem, 1.0/15.0) 
         return layout
   
     def atualizaImagem(self, dt):
